@@ -11,8 +11,8 @@ export function Auth0ProviderWithHistory({ children }) {
 
   return (
     <Auth0Provider
-      domain="dev-splnv432dhw4k6rz.jp.auth0.com"
-      clientId="IwMaf63hZTLxtxikQA3duoZAmnbviWrD"
+      domain={process.env.REACT_APP_AUTH_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri="http://localhost:8080"
       cacheLocation="localstorage"
       onRedirectCallback={onRedirectCallback}

@@ -6,7 +6,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { useBasketContext } from '@/contexts/BasketContext'
 import CheckoutForm from './CheckoutForm'
 
-const promise = loadStripe('pk_test_51M315gB4AFqtgwWUaOI0dtFigOwANEgkUDytVVWhcHsBPNaDvBI7KR6LaHyBNhz9U1JObbCRXVEbkhYJ2kdUYOHN00saBY6ZWY')
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 function StripeCheckout() {
   const { basket, total_amount, shipping_fee } = useBasketContext()

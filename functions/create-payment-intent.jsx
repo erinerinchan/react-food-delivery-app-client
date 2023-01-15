@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable camelcase */
 import { useBasketContext } from '@/contexts/BasketContext'
 
 const express = require('express')
 
 const app = express()
-const stripe = require('stripe')('sk_test_51M315gB4AFqtgwWUQjrIDzwfQVhRkFk3CqQECeyzKextiKBl7VCLfJSYjxNrQjhxhcEXio5OAGxGbjJDaEHz38Va00V7vA3Z3M')
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY)
 
 app.use(express.static('public'))
 app.use(express.json())

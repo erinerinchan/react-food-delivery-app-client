@@ -49,10 +49,11 @@
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8.27.0",
-    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb": "^9.0.1",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^1.11.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-redux": "^4.0.0",
@@ -79,10 +80,6 @@
       "react-redux"
     ],
     "extends": [
-      "airbnb-base",
-      "airbnb/rules/react",
-      "airbnb/hooks",
-      "plugin:react-redux/recommended"
     ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
