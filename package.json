@@ -79,8 +79,7 @@
     "plugins": [
       "react-redux"
     ],
-    "extends": [
-    ],
+    "extends": [],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
       "ecmaFeatures": {
