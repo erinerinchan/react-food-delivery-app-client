@@ -64,6 +64,7 @@ module.exports = {
     client: {
       overlay: false
     },
+    allowedHosts: 'all',
     port: process.env.PORT || 8080,
   }
 }
