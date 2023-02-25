@@ -9,11 +9,13 @@ export function Auth0ProviderWithHistory({ children }) {
     navigate(appState?.returnTo || window.location.pathname)
   }
 
+  const appURL = process.env.REACT_APP_URL || "http://localhost:8080";
+
   return (
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH_DOMAIN}
       clientId={process.env.REACT_APP_CLIENT_ID}
-      redirectUri="http://localhost:8080"
+      redirectUri={appURL}
       cacheLocation="localstorage"
       onRedirectCallback={onRedirectCallback}
     >
