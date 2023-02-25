@@ -63,6 +63,7 @@ module.exports = {
     historyApiFallback: true,
     client: {
       overlay: false
-    }
+    },
+    port: process.env.PORT || 8080,
   }
 }
