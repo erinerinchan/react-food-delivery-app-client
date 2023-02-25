@@ -5,6 +5,7 @@ import CompsBreadcrumbs from '@/components/Breadcrumbs'
 import Loading from '@/components/Loading'
 import Error from '@/components/Error'
 import { BsStarFill, BsFillGridFill, BsList } from 'react-icons/bs'
+import { API_ENDPOINT } from '@/config'
 
 const useQuery = () => {
   const [search, setSearch] = useSearchParams()
@@ -26,7 +27,7 @@ function PagesRestaurantsIndex() {
   useEffect(() => {
     axios({
       method: 'GET',
-      url: 'http://localhost:3000/api/restaurants'
+      url: `${API_ENDPOINT}/api/restaurants`
     }).then((resp) => {
       setRestaurants(resp.data)
     }).catch((err) => {
@@ -37,7 +38,7 @@ function PagesRestaurantsIndex() {
 
     axios({
       method: 'GET',
-      url: 'http://localhost:3000/api/filterable'
+      url: `${API_ENDPOINT}/api/filterable`
     }).then((resp) => {
       setFilterable(resp.data)
       const dietaryID = resp.data?.dietaries?.find((filter) => filter?.name?.toLowerCase() === query?.filter?.toLowerCase())?._id
@@ -52,7 +53,7 @@ function PagesRestaurantsIndex() {
     if (selectedFilter) {
       axios({
         method: 'GET',
-        url: `http://localhost:3000/api/restaurants?filter=${selectedFilter}`
+        url: `${API_ENDPOINT}/api/restaurants?filter=${selectedFilter}`
       }).then((resp) => {
         setRestaurants(resp.data)
       }).catch((err) => {

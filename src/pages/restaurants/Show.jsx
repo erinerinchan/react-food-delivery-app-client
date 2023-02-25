@@ -6,6 +6,7 @@ import Loading from '@/components/Loading'
 import Error from '@/components/Error'
 import { BsStarFill } from 'react-icons/bs'
 import ProductCategory from '@/components/restaurants/ProductCategory'
+import { API_ENDPOINT } from '@/config'
 
 function PagesRestaurantsShow() {
   const { id } = useParams()
@@ -16,7 +17,7 @@ function PagesRestaurantsShow() {
   useEffect(() => {
     axios({
       method: 'GET',
-      url: `http://localhost:3000/api/restaurants/${id}`
+      url: `${API_ENDPOINT}/api/restaurants/${id}`
     }).then((resp) => {
       setData(resp.data)
     }).catch((err) => {

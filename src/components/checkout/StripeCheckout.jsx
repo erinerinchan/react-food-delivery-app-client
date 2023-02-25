@@ -5,6 +5,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import { useBasketContext } from '@/contexts/BasketContext'
 import CheckoutForm from './CheckoutForm'
+import { API_ENDPOINT } from '@/config'
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
@@ -13,7 +14,7 @@ function StripeCheckout() {
   const [clientSecret, setClientSecret] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/payments', {
+    fetch(`${API_ENDPOINT}/api/payments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ basket, total_amount, shipping_fee })

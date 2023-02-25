@@ -9,7 +9,7 @@ export function Auth0ProviderWithHistory({ children }) {
     navigate(appState?.returnTo || window.location.pathname)
   }
 
-  const appURL = process.env.REACT_APP_URL || "http://localhost:8080";
+  const appURL = process.env.REACT_APP_URL || "http://localhost:8080"
 
   return (
     <Auth0Provider
